@@ -1,0 +1,102 @@
+{
+    "debug": true,
+    "fps": 60,
+    "assetsBaseUrl": "/assets/",
+    "locale": "en",
+    "defaultLocale": "en",
+    "locales": ["en", "bg"],
+    "app": {
+        "backgroundColor": "#221122",
+        "antialias": true,
+        "autoResize": true
+    },
+    "renderer": {
+        "autoResize": true
+    },
+    "world": {
+        "offset": 10,
+        "size": {
+            "width": 800,
+            "height": 600
+        }
+    },
+    "engine": {
+        "gravity": {
+            "x": 0,
+            "y": 1,
+            "scale": 0.001
+        }
+    },
+    "view": {
+        "style": {
+            "display": "flex",
+            "top": 0,
+            "left": 0,
+            "right": 0
+        }
+    },
+    "fonts": {
+        "main": {
+            "family": "LuckiestGuy"
+        }
+    },
+    "ui": {
+        "style": {
+            "fontFamily": "LuckiestGuy",
+            "fontSize": 44,
+            "fill": "#FFFFFF",
+            "dropShadow": true,
+            "dropShadowAlpha": 0.6,
+            "dropShadowAngle": 1.4,
+            "dropShadowBlur": 3,
+            "letterSpacing": 3
+        }
+    },
+    "models": {
+        "rooms": {
+            "def": {
+                "border": {
+                    "color": "#FF8800",
+                    "width": 3
+                },
+                "size": {
+                    "width": 0.95,
+                    "height": 0.95
+                },
+                "position": {
+                    "x": 0,
+                    "y": 0
+                },
+                "items": {
+                    
+                },
+                "board": {
+                    
+                },
+                "matter": {
+                }
+            }, 
+            "types": {
+                "zig_zag": {
+                    "items": {
+                    }
+                }
+            }
+        },
+        "objects": {
+            "def": {
+            },
+            "types": {
+                "ball": {},
+                "ping-pong": {
+                }
+            }
+        },
+        "lots": {
+            "def": {
+                
+            }
+        }
+    }
+    
+}
