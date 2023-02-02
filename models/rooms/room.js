@@ -1,7 +1,8 @@
 import Model from '$core/2d/models/matter-model';
 import { Graphics } from 'pixi.js';
-import { Bodies, Rectangle} from 'matter-js';
-import { hex2bin, hex2base } from '$core/utils/colors';
+import { Bodies, Rectangle, Composite } from 'matter-js';
+import { hex2dec } from '$core/utils/colors';
+import Objects from '$toto/models/objects/objects';
 class Room extends Model {
     constructor(options) {
         super(options);
@@ -30,8 +31,13 @@ class Room extends Model {
     }
     
     filter_border(border) {
-        border.color = hex2bin(border.color);
+        border.color = hex2dec(border.color);        
         return border;
+    }
+    
+    filter_objects(objects) {
+        objects.bounds = this.size;
+        return new Objects(objects);
     }
     
     createModel() {
@@ -40,22 +46,28 @@ class Room extends Model {
 
         room.lineStyle(border.width, border.color);
         room.drawRect(position.x, position.y, size.width, size.height);
-console.log(border.colo);
+
         return room;
     }
     
     createBody() {
-        const {position, model, size, matter} = this;
+        const {position, model, size, matter, border} = this;
+        const { x, y } = model.position;
+        const { width, height } = model;
         
-        matter.chamfer = { radius: this.rounded};
+        const walls = Composite.create();
         
-        return Bodies.rectangle(
-                model.position.x,
-                model.position.y,
-                model.width,
-                model.height,
-                matter
-        );
+        const left = Bodies.rectangle(x, y, x + border.width, height, matter);
+        const top  = Bodies.rectangle(x, y, x, height + border.width, matter);
+        const right = Bodies.rectangle(x + width, y, x + border.width, height, matter);
+        const bottom = Bodies.rectangle(x, y + height, x, height + border.width, matter);
+        
+        Composite.add(walls, left);
+        Composite.add(walls, top);
+        Composite.add(walls, right);
+        Composite.add(walls, bottom);
+        return walls;
+        
     }
     
     createItems() {

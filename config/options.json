@@ -67,6 +67,31 @@
                     "x": 0,
                     "y": 0
                 },
+                "objects": {
+                    "def": {
+                        "style": {
+                            "fill": "#FF0088",
+                            "opacity": 0.5,
+                            "line": {
+                            
+                            }
+                        },
+                        "matter": {
+                            
+                        }
+                    },
+                    "types": {},
+                    "grid": {
+                        "rows": 3,
+                        "colums": 5,
+                        "offset": {
+                            "x": 2,
+                            "y": 2
+                        },
+                        "width": 1,
+                        "height": 0.25
+                    }
+                },
                 "items": {
                     
                 },
@@ -74,21 +99,25 @@
                     
                 },
                 "matter": {
+                    "isStatic": true
                 }
             }, 
             "types": {
                 "zig_zag": {
+                    "objects": {
+                        "types": {
+                            "ping_pong": {
+                                "radius": [15, 25],
+                                "pixi": {},
+                                "matter": {
+                                    
+                                },
+                                "count": 7
+                            }
+                        }
+                    },
                     "items": {
                     }
-                }
-            }
-        },
-        "objects": {
-            "def": {
-            },
-            "types": {
-                "ball": {},
-                "ping-pong": {
                 }
             }
         },

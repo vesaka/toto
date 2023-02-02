@@ -30,6 +30,7 @@ class TotoGame extends BaseGame2D {
         this.$rooms = new Rooms(rooms);
         this.$rooms.select().then(room => {
             this.add(room);
+            room.objects.each(obj => this.add(obj));
         });
         //.$rooms.select();
         
