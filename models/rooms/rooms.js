@@ -9,7 +9,7 @@ class Rooms extends Collection {
     }
     
     select(type = null, options = {}) {
-        const { def, types, scene } = this;
+        const { def, types } = this;
         const keys = Object.keys(MAP);
         
         type = keys.includes(type) ? type : keys[0];
@@ -23,14 +23,7 @@ class Rooms extends Collection {
         this.add(room);
         this.activeRoom = room;
         
-        return new Promise((done, fail) => {
-            if (room) {
-                done(room)
-            } else {
-                fail();
-            }
-            
-        });
+        this.$emit('room_selected', room);
     }
     
     load() {}

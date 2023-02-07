@@ -5,7 +5,7 @@ import Matrix from '$core/2d/grids/matrix'
 import Ball from './ball';
 import PingPong from './ping-pong';
 
-
+import { Graphics } from 'pixi.js';
 
 class Objects extends Collection {
     constructor(options) {
@@ -19,7 +19,6 @@ class Objects extends Collection {
         grid.width *= Math.round(width);
         grid.height *= Math.round(height);
         return grid;
-        return new Matrix(grid);
     }
 
     createItems() {
@@ -62,19 +61,23 @@ class Objects extends Collection {
         
       
         grid.rows = Math.ceil(((bounds.width / maxSize) * count) / bounds.width) ;
-        grid.columns = count / grid.rows;
+        grid.columns = Math.floor(count / grid.rows);
 
         const matrix = new Matrix(grid);
         matrix.eachSlot(slot => {
             const index = (matrix.columns * slot.x) + slot.y;
             const item = this.items[index];
-            
             if (item) {
                 item.setPosition(
                         between(slot.ax + maxSize, slot.bx - maxSize),
                         between(slot.ay + maxSize, slot.cy - maxSize)
                 );
             }
+            const cell = new Graphics;
+            cell.lineStyle(2,0xAA7700);
+            cell.drawRect(slot.ax, slot.ay, slot.width, slot.height);
+            
+            this.scene.addChild(cell);
         });
         this.grid = matrix;
 

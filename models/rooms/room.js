@@ -27,6 +27,8 @@ class Room extends Model {
         
         position.x = (width - size.width) / 2;
         position.y = (height - size.height) / 2;
+        
+        
         return position;
     }
     
@@ -36,7 +38,8 @@ class Room extends Model {
     }
     
     filter_objects(objects) {
-        objects.bounds = this.size;
+        objects.bounds = this.size; 
+        objects.grid.offset = this.position;
         return new Objects(objects);
     }
     

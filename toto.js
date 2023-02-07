@@ -1,8 +1,9 @@
 import BaseGame2D from '$core/2d/game-matter';
-import { Texture, Container, TilingSprite } from 'pixi.js';
+import { Texture, Container, Graphics } from 'pixi.js';
 import { Bounds, Vertices, Runner } from 'matter-js';
 
 import Rooms from '$toto/models/rooms/rooms';
+import Lots from '$toto/models/lots/lots';
 
 class TotoGame extends BaseGame2D {
     
@@ -12,7 +13,9 @@ class TotoGame extends BaseGame2D {
         this.$listen({
             game: ['loaded', 'start', 'over', 'reset', 'pause'],
             locale: ['loaded'],
-            window: ['resize', 'orientationchange']
+            window: ['resize', 'orientationchange'],
+            collection: ['ready'],
+            room: ['selected', 'left']
         });
         
         this.$set('scene', new Container); 
@@ -26,14 +29,22 @@ class TotoGame extends BaseGame2D {
     }
     
     createModels() {
-        const { rooms } = this.options.models;
-        this.$rooms = new Rooms(rooms);
-        this.$rooms.select().then(room => {
-            this.add(room);
-            room.objects.each(obj => this.add(obj));
-        });
-        //.$rooms.select();
-        
+        const { models } = this.options;
+        for(let name in models) {
+            const Model = MODELS[name];
+            if (Model) {
+                this[name] = new Model(models[name]);
+            }
+        }
+    }
+    
+    collection_ready(items) {
+        items.each(item => this.add(item));
+    }
+    
+    room_selected(room) {
+        this.add(room);
+        room.objects.each(obj => this.add(obj));
     }
     
     createUI() {
@@ -41,14 +52,19 @@ class TotoGame extends BaseGame2D {
     }
     
     enterRoom() {
-        //this.$rooms.
     }
     
     build() {
+        this.rooms.select();
         this.enterRoom();
     }
     
 }
+
+const MODELS = {
+    rooms: Rooms,
+    lots: Lots
+};
 
 export default TotoGame;
 
