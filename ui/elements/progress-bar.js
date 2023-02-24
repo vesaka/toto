@@ -1,5 +1,5 @@
 import { Graphics, RoundedRectangle } from 'pixi.js';
-import Progress from '$lib/game/core/2d/display/progress';
+import Progress from '$core/2d/display/progress';
 import { hex2dec } from '$core/utils/colors'
 
 class ProgressBar extends Progress {
