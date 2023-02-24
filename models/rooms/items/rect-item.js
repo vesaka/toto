@@ -1,10 +1,10 @@
 import Item from './item';
 
-class CircleItem extends Model {
+class RectItem extends Item {
     constructor(options) {
         super(options);
     }
 }
 
-export default CircleItem;
+export default RectItem;
 

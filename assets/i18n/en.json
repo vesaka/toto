@@ -1,3 +1,10 @@
 {
-    "name": "veselin"
+    "name": "veselin",
+    "ui": {
+        "button": {
+            "start": "Start",
+            "pause": "Pause",
+            "level": "Next Level"
+        }
+    }
 }

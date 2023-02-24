@@ -12,12 +12,12 @@
     const container = ref(null);
     let game;
     onMounted(() => {
-        
         game = new TotoGame({
             container: container.value,
             options,
             settings,
-            assets
+            assets,
+            $store: useGameStore()
         });
         game.load();
     });

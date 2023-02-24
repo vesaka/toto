@@ -17,12 +17,12 @@ class Rooms extends Collection {
         const roomItem = this.first(room => {
             return type === room.type;
         });
-
-        types[type].type = type; 
-        const room = roomItem || new MAP[type](extend(def, types[type] || {}));
+        const roomOptions = extend(def, types[type] || {});
+        roomOptions.type = type; 
+        const room = roomItem || new MAP[type](roomOptions);
+        
         this.add(room);
         this.activeRoom = room;
-        
         this.$emit('room_selected', room);
     }
     

@@ -1,10 +1,13 @@
 {
     "debug": true,
     "fps": 60,
-    "assetsBaseUrl": "/assets/",
+    "assetsBaseUrl": "/src/game/toto/assets/",
     "locale": "en",
     "defaultLocale": "en",
-    "locales": ["en", "bg"],
+    "locales": [
+        "en",
+        "bg"
+    ],
     "app": {
         "backgroundColor": "#221122",
         "antialias": true,
@@ -50,6 +53,200 @@
             "dropShadowAngle": 1.4,
             "dropShadowBlur": 3,
             "letterSpacing": 3
+        },
+        "screens": {
+            "def": {
+                "buttons": {},
+                "visible": false,
+                "style": {
+                    "fill": "#676789",
+                    "rounded": 10,
+                    "line": {
+                        "width": 3,
+                        
+                        "color": "#FF8800"
+                    }
+                },
+                "size": {
+                    "width": 0.5,
+                    "height": 0.5
+                },
+                "position": {
+                    "x": 0.5,
+                    "y": 0.5
+                }
+                
+            },
+            "types": {
+                "loading": {
+                    "style": {
+                        "fill": "#1212FA",
+                        "alpha": 0.3
+                    },
+                    "progress": {
+                        "background": {
+                            "fill": "#001133"
+                        },
+                        "position": {
+                            "y": 0.5
+                        },
+                        "size": {
+                            "width": 400,
+                            "height": 30,
+                            "radius": 50,
+                            "border": 5
+                        },
+                        "outer": {
+                            "fill": "#553133"
+                        },
+                        "inner": {
+                            "fill": "#001133"
+                        }
+                    }
+                },
+                "home": {},
+                "play": {
+                    "position": {
+                        
+                    },
+                    "buttons": {
+                        "pause": {
+                            "view": "card",
+                            "position": {
+                                "x": 0.82,
+                                "y": 0.07
+                            }
+                        }
+                        
+                    }
+                },
+                "pause": {
+                    "visible": true,
+                    "buttons": {
+                        "resume": {
+                            "position": {
+                                "x": 0.37,
+                                "y": 0.6
+                            }
+                        },
+                        "home": {
+                            "position": {
+                                "x": 0.5,
+                                "y": 0.6
+                            }
+                        },
+                        "leaderboard": {
+                            "position": {
+                                "x": 0.63,
+                                "y": 0.6
+                            }
+                        }
+                    }
+                },
+                "level": {},
+                "end": {
+                }
+            }
+        },
+        "buttons": {
+            "def": {
+                "size": {
+                    "width": 0.04,
+                    "height": 0.04
+                },
+                "position": {
+                    "x": 0.5,
+                    "y": 0.5
+                },
+                "style": {
+                    "color": "#FFFFFF",
+                    "fill": "#1212FA",
+                    "radius": 10,
+                    "alpha": 1
+                }
+            },
+            "types": {
+                "start": {
+                    "size": {
+                        "width": 0.35,
+                        "height": 0.15
+                    }
+                },
+                "pause": {},
+                "level": {},
+                "fullscreen": {
+                    "position": {
+                        "x": 0.92,
+                        "y": 0.07
+                    }
+                }
+            }
+        },
+        "score": {
+            "size": {
+                "width": 0.4,
+                "height": 0.1
+            },
+            "position": {
+                "x": 0.7,
+                "y": 0.02
+            },
+            "counter": {
+                "style": {
+                    "fill": "#FF2222",
+                    "align": "right"
+                }
+            },
+            "label": {
+                "style": {
+                    "fill": "#FFAAAA",
+                    "align": "left"
+                }
+            }
+        },
+        "level": {
+            "size": {
+                "width": 0.4,
+                "height": 0.1
+            },
+            "position": {
+                "x": 0.7,
+                "y": 0.02
+            },
+            "counter": {
+                "style": {
+                    "fill": "#FF2222",
+                    "align": "right"
+                }
+            },
+            "label": {
+                "style": {
+                    "fill": "#FFAAAA",
+                    "align": "left"
+                }
+            }
+        },
+        "timer": {
+            "size": {
+                "width": 0.4,
+                "height": 0.1
+            },
+            "position": {
+                "x": 0.7,
+                "y": 0.02
+            },
+            "counter": {
+                "style": {
+                    "fill": "#FF2222",
+                    "align": "right"
+                }
+            },
+            "label": {
+                "style": {
+                    "fill": "#FFAAAA",
+                    "align": "left"
+                }
+            }
         }
     },
     "models": {
@@ -59,6 +256,16 @@
                     "color": "#FF8800",
                     "width": 3
                 },
+                "style": {
+                    "color": "#FF8800",
+                    "width": 3
+                },
+                "edges": [
+                    "top",
+                    "right",
+                    "bottom",
+                    "left"
+                ],
                 "size": {
                     "width": 0.95,
                     "height": 0.95
@@ -73,11 +280,12 @@
                             "fill": "#FF0088",
                             "opacity": 0.5,
                             "line": {
-                            
+
                             }
                         },
                         "matter": {
-                            
+                            "isSleeping": false,
+                            "isStatic": false
                         }
                     },
                     "types": {},
@@ -89,17 +297,61 @@
                             "y": 10
                         },
                         "width": 1,
-                        "height": 0.25
+                        "height": 0.15
                     }
                 },
                 "items": {
-                    
+                    "def": {
+                        "style": {
+                            "fill": "#FF0088",
+                            "color": "#FF0088",
+                            "opacity": 0.5,
+                            "width": 2
+                        },
+                        "matter": {
+                            "isStatic": true,
+                            "restitution": 0.9
+                        }
+                    },
+                    "types": {
+                        "circle": {
+                            "radius": 30
+                        }
+                    },
+                    "grid": {
+                        "rows": 3,
+                        "columns": 6,
+                        "offset": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "width": 1,
+                        "height": 0.5
+                    }
                 },
-                "board": {
-                    
+                "plank": "lever",
+                "lots": {
+                    "count": 4,
+                    "distance": 0.25,
+                    "score": {
+                        "min": 5,
+                        "max": 100
+                    },
+                    "item": {
+                        "type": "bowl",
+                        "radius": 50,
+                        "sides": 30,
+                        "round": 5,
+                        "width": 10,
+                        "style": {},
+                        "matter": {
+                            "isStatic": true
+                        }
+                    }
                 },
                 "matter": {
-                    "isStatic": true
+                    "isStatic": true,
+                    "restitution": 0.9
                 }
             }, 
             "types": {
@@ -107,12 +359,15 @@
                     "objects": {
                         "types": {
                             "ping_pong": {
-                                "radius": [15, 25],
+                                "radius": [
+                                    5,
+                                    7
+                                ],
                                 "pixi": {},
                                 "matter": {
-                                    
+                                    "restitution": 0.8
                                 },
-                                "count": 7
+                                "count": 100
                             }
                         }
                     },
@@ -122,10 +377,69 @@
             }
         },
         "lots": {
+            "map": {},
             "def": {
-                
+                "style": {},
+                "matter": {}
+            },
+            "types": {
+                "bowl": {
+                },
+                "glass": {
+                },
+                "plastic": {
+                }
+            }
+        },
+        "planks": {
+            "def": {
+                "position": {
+                    "x": -0.5,
+                    "y": 0.15
+                },
+                "size": {
+                    "width": 1,
+                    "height": 0.02
+                },
+                "style": {
+                    "fill": "#25AF25",
+                    "line": {
+                        "width": 2,
+                        "color": "#FFAAAA"
+                    }
+                },
+                "direction": 1,
+                "matter": {
+                    "isStatic": true,
+                    "isSleeping": true
+                },
+                "constraints": [
+                ],
+                "components": {}
+            },
+            "types": {
+                "lever": {
+                    "maxOpenDistance": 30,
+                    "components": {
+                        "left": {
+                            "direction": -1,
+                            "style": {
+                                "fill": "#2525AF"
+                            },
+                            "position": {
+                                "x": -0.5
+                            }
+                        },
+                        "right": {
+                            "direction": 1,
+                            "position": {
+                                "x": 0.5
+                            }
+                        }
+                    }
+                },
+                "door": {}
             }
         }
     }
-    
 }

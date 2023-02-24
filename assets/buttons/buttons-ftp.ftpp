@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "version": "0.6.7"
+  },
+  "savePath": "",
+  "images": [
+    {
+      "name": "back.png",
+      "path": "D:/Projects/game-vue-app/src/game/toto/assets/buttons/back.png",
+      "folder": ""
+    },
+    {
+      "name": "cancel.png",
+      "path": "D:/Projects/game-vue-app/src/game/toto/assets/buttons/cancel.png",
+      "folder": ""
+    },
+    {
+      "name": "fullscreen.png",
+      "path": "D:/Projects/game-vue-app/src/game/toto/assets/buttons/fullscreen.png",
+      "folder": ""
+    },
+    {
+      "name": "home.png",
+      "path": "D:/Projects/game-vue-app/src/game/toto/assets/buttons/home.png",
+      "folder": ""
+    },
+    {
+      "name": "info.png",
+      "path": "D:/Projects/game-vue-app/src/game/toto/assets/buttons/info.png",
+      "folder": ""
+    },
+    {
+      "name": "leaderboard.png",
+      "path": "D:/Projects/game-vue-app/src/game/toto/assets/buttons/leaderboard.png",
+      "folder": ""
+    },
+    {
+      "name": "ok.png",
+      "path": "D:/Projects/game-vue-app/src/game/toto/assets/buttons/ok.png",
+      "folder": ""
+    },
+    {
+      "name": "pause.png",
+      "path": "D:/Projects/game-vue-app/src/game/toto/assets/buttons/pause.png",
+      "folder": ""
+    },
+    {
+      "name": "play.png",
+      "path": "D:/Projects/game-vue-app/src/game/toto/assets/buttons/play.png",
+      "folder": ""
+    },
+    {
+      "name": "replay.png",
+      "path": "D:/Projects/game-vue-app/src/game/toto/assets/buttons/replay.png",
+      "folder": ""
+    },
+    {
+      "name": "resume.png",
+      "path": "D:/Projects/game-vue-app/src/game/toto/assets/buttons/resume.png",
+      "folder": ""
+    },
+    {
+      "name": "setting.png",
+      "path": "D:/Projects/game-vue-app/src/game/toto/assets/buttons/setting.png",
+      "folder": ""
+    },
+    {
+      "name": "smallscreen.png",
+      "path": "D:/Projects/game-vue-app/src/game/toto/assets/buttons/smallscreen.png",
+      "folder": ""
+    },
+    {
+      "name": "sound_off.png",
+      "path": "D:/Projects/game-vue-app/src/game/toto/assets/buttons/sound_off.png",
+      "folder": ""
+    },
+    {
+      "name": "sound_on.png",
+      "path": "D:/Projects/game-vue-app/src/game/toto/assets/buttons/sound_on.png",
+      "folder": ""
+    }
+  ],
+  "folders": [],
+  "packOptions": {
+    "textureName": "buttons",
+    "textureFormat": "png",
+    "removeFileExtension": true,
+    "prependFolderName": true,
+    "base64Export": false,
+    "tinify": false,
+    "tinifyKey": "",
+    "scale": 1,
+    "filter": "none",
+    "exporter": "JSON (hash)",
+    "fileName": "pack-result",
+    "savePath": "",
+    "width": 2048,
+    "height": 2048,
+    "fixedSize": false,
+    "powerOfTwo": false,
+    "padding": 2,
+    "extrude": 0,
+    "allowRotation": true,
+    "allowTrim": true,
+    "trimMode": "trim",
+    "alphaThreshold": "0",
+    "detectIdentical": true,
+    "packer": "OptimalPacker",
+    "packerMethod": "Automatic"
+  }
+}

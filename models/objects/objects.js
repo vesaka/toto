@@ -1,7 +1,7 @@
 import Collection from '$core/models/collection';
 import { extend, raw } from '$core/utils/object';
 import { between } from '$core/utils/math';
-import Matrix from '$core/2d/grids/matrix'
+import Matrix from '$core/2d/grids/matrix';
 import Ball from './ball';
 import PingPong from './ping-pong';
 
@@ -37,7 +37,8 @@ class Objects extends Collection {
             delete options.count;
 
             for (let i = 0; i < count; i++) {
-                this.add(new MAP[type](raw(options)));
+                options.index = i;
+                this.add(new MAP[type](options));
             }
         }
         this.shuffle();
@@ -63,6 +64,7 @@ class Objects extends Collection {
         grid.rows = Math.ceil(((bounds.width / maxSize) * count) / bounds.width) ;
         grid.columns = Math.floor(count / grid.rows);
 
+        grid.width += grid.offset.x*2;
         const matrix = new Matrix(grid);
         matrix.eachSlot(slot => {
             const index = (matrix.columns * slot.x) + slot.y;
@@ -73,11 +75,11 @@ class Objects extends Collection {
                         between(slot.ay + maxSize, slot.cy - maxSize)
                 );
             }
-            const cell = new Graphics;
-            cell.lineStyle(2,0xAA7700);
-            cell.drawRect(slot.ax, slot.ay, slot.width, slot.height);
-            
-            this.scene.addChild(cell);
+//            const cell = new Graphics;
+//            cell.lineStyle(2,0xAA7700);
+//            cell.drawRect(slot.ax, slot.ay, slot.width, slot.height);
+//            
+//            this.scene.addChild(cell);
         });
         this.grid = matrix;
 
@@ -88,7 +90,7 @@ class Objects extends Collection {
 const MAP = {
     ball: Ball,
     ping_pong: PingPong
-}
+};
 
 export default Objects;
 
