@@ -1,3 +1,4 @@
+import './style.css';
 import { createApp } from 'vue';
 import { createRouter, createWebHashHistory, createWebHistory  } from 'vue-router';
 
