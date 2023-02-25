@@ -1,3 +1,4 @@
 {
-    "name": "vesak"
+    "debug": true,
+    "apiUrl": "vesaka.info"
 }
