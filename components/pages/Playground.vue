@@ -5,7 +5,6 @@
     import { ref, onMounted, onBeforeUnmount } from 'vue';
     import TotoGame from '$toto/toto';
     import options from '$toto/config/options.json';
-    import settings from '$toto/config/settings.json';
     import assets from '$toto/config/assets.json';
     import { useAuthStore, useGameStore } from '$toto/bootstrap/stores';
     
@@ -15,7 +14,6 @@
         game = new TotoGame({
             container: container.value,
             options,
-            settings,
             assets,
             $store: useGameStore()
         });
