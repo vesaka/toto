@@ -1,4 +1,5 @@
 {
     "debug": true,
+    "assetsBaseUrl": "/src/game/toto/assets/",
     "apiUrl": "vesaka.info"
 }
