@@ -19,8 +19,8 @@
     "world": {
         "offset": 10,
         "size": {
-            "width": 800,
-            "height": 600
+            "width": 640,
+            "height": 480
         }
     },
     "engine": {
@@ -367,7 +367,7 @@
                                 "matter": {
                                     "restitution": 0.8
                                 },
-                                "count": 100
+                                "count": 200
                             }
                         }
                     },

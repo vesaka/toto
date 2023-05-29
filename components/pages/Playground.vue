@@ -1,5 +1,5 @@
 <template>
-    <div ref="container" class="flex relative inset-0 w-full h-full justify-center items-center"></div>
+    <div ref="container" class="flex relative w-full h-screen justify-center items-center origin-centero"></div>
 </template>
 <script setup>
     import { ref, onMounted, onBeforeUnmount } from 'vue';

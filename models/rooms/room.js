@@ -31,9 +31,9 @@ class Room extends Model {
         this.createItems();
         
         this.threshold = this.lots.min(item => item.position.y + item.radius/2);
-        const line = new Graphics();
-        line.lineStyle(5, 0xFFFFFF).moveTo(0, this.threshold).lineTo(this.app.screen.width, this.threshold);
-        this.scene.addChild(line);
+//        const line = new Graphics();
+        // line.lineStyle(5, 0xFFFFFF).moveTo(0, this.threshold).lineTo(this.app.screen.width, this.threshold);
+        // this.scene.addChild(line);
     }
     
     createThresholds() {
